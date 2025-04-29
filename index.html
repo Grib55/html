@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML InfoSite</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <h1 data-lang="title" class="fade-in">Что такое HTML?</h1>
+      <p data-lang="subtitle" class="fade-in delay">Основы веб-разработки</p>
+      <div class="language-switcher">
+        <button onclick="setLanguage('ru')">RU</button>
+        <button onclick="setLanguage('ua')">UA</button>
+        <button onclick="setLanguage('en')">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="section fade-in">
+      <h2 data-lang="intro_title">🔍 Введение</h2>
+      <p data-lang="intro_text"></p>
+    </section>
+    <section class="section fade-in">
+      <h2 data-lang="history_title">📚 История</h2>
+      <p data-lang="history_text"></p>
+    </section>
+    <section class="section fade-in">
+      <h2 data-lang="purpose_title">🎯 Назначение</h2>
+      <p data-lang="purpose_text"></p>
+    </section>
+    <section class="section fade-in">
+      <h2 data-lang="usage_title">🛠 Как используется сегодня</h2>
+      <p data-lang="usage_text"></p>
+    </section>
+    <section class="section fade-in">
+      <h2 data-lang="facts_title">✨ Интересные факты</h2>
+      <ul data-lang="facts_list"></ul>
+    </section>
+    <section class="section fade-in">
+      <h2 data-lang="conclusion_title">🏁 Заключение</h2>
+      <p data-lang="conclusion_text"></p>
+    </section>
+
+    <section class="section fade-in">
+      <h2>🎮 Мини-игра</h2>
+      <p id="scoreboard">Счёт: 0</p>
+      <canvas id="pong" width="600" height="400" style="background:#333;"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#top" class="to-top">Наверх ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
