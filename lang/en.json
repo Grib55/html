@@ -1,0 +1,23 @@
+{
+  "title": "What is HTML?",
+  "heroTitle": "What is HTML?",
+  "heroSubtitle": "The foundation of the web — from the first pages to modern apps",
+  "introTitle": "🔍 Introduction",
+  "introText": "HTML is a markup language for displaying information in web browsers.",
+  "historyTitle": "📚 History",
+  "historyText": "Created by Tim Berners-Lee in 1991 to share scientific content online.",
+  "purposeTitle": "🎯 Purpose",
+  "purposeText": "HTML structures web pages and forms the foundation of web content.",
+  "usageTitle": "🛠 Modern Usage",
+  "usageText": "Used in websites, web apps, e-commerce platforms, and even games.",
+  "factsTitle": "✨ Fun Facts",
+  "factsList": [
+    "HTML is not a programming language.",
+    "HTML5 includes audio and video tags.",
+    "The first version of HTML had 18 tags.",
+    "HTML is used on every website."
+  ],
+  "conclusionTitle": "🏁 Conclusion",
+  "conclusionText": "Knowing HTML is the first step into web development.",
+  "toTop": "Back to Top ↑"
+}

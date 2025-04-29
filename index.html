@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-lang="title">Что такое HTML?</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="language-switcher">
+    <button onclick="setLanguage('ru')">🇷🇺 Рус</button>
+    <button onclick="setLanguage('ua')">🇺🇦 Укр</button>
+    <button onclick="setLanguage('en')">En</button>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <h1 class="fade-in" data-lang="heroTitle">Что такое HTML?</h1>
+      <p class="fade-in delay" data-lang="heroSubtitle">Описание...</p>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="section fade-in">
+      <h2 data-lang="introTitle"></h2>
+      <p data-lang="introText"></p>
+    </section>
+
+    <section class="section fade-in">
+      <h2 data-lang="historyTitle"></h2>
+      <p data-lang="historyText"></p>
+    </section>
+
+    <section class="section fade-in">
+      <h2 data-lang="purposeTitle"></h2>
+      <p data-lang="purposeText"></p>
+    </section>
+
+    <section class="section fade-in">
+      <h2 data-lang="usageTitle"></h2>
+      <p data-lang="usageText"></p>
+    </section>
+
+    <section class="section fade-in">
+      <h2 data-lang="factsTitle"></h2>
+      <ul data-lang="factsList"></ul>
+    </section>
+
+    <section class="section fade-in">
+      <h2 data-lang="conclusionTitle"></h2>
+      <p data-lang="conclusionText"></p>
+    </section>
+  
+<section class="section fade-in">
+  <h2>🕹️ Мини-игра: Отбей мяч!</h2>
+  <p>Используй стрелки влево и вправо, чтобы отбить мяч. Игра заканчивается, если робот выиграет.</p>
+  <canvas id="pong" width="600" height="400" style="background:#000; display:block; margin: 20px auto; border: 3px solid #007BFF;"></canvas>
+</section>
+
+</main>
+
+  <footer>
+    <a href="#top" class="to-top" data-lang="toTop">Наверх ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
