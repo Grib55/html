@@ -1,254 +1,101 @@
-
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="transition-colors duration-300">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HTML — Язык Интернета | HTML - The Language of the Web</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Что такое HTML</title>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS (Animate on Scroll) CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" type="image/png">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-      position: relative;
+      font-family: 'Poppins', sans-serif;
     }
-    .stars, .twinkling {
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: -1;
-    }
-    .stars {
-      background: url('https://i.imgur.com/wMHRR6U.png') repeat;
-      animation: moveStars 50s linear infinite;
-    }
-    .twinkling {
-      background: url('https://i.imgur.com/7b1IKRy.png') repeat;
-      animation: twinkle 200s linear infinite;
-    }
-    @keyframes moveStars {
-      from { background-position: 0 0; }
-      to { background-position: 10000px 5000px; }
-    }
-    @keyframes twinkle {
-      from { opacity: 1; }
-      50% { opacity: 0.3; }
-      to { opacity: 1; }
-    }
-    header {
-      text-align: center;
-      padding: 120px 20px 60px;
-      font-size: 2.5em;
-      font-weight: bold;
-      background: rgba(0, 0, 0, 0.3);
-    }
-    nav {
-      text-align: center;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.4);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-size: 1.2em;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ffd700;
-    }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-    }
-    .lang-switch button {
-      margin: 0 5px;
-      padding: 5px 10px;
-      font-size: 1em;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-    }
-    section {
-      padding: 80px 20px;
-      max-width: 1000px;
-      margin: auto;
-      position: relative;
-    }
-    h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      border-bottom: 2px solid white;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-    p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      margin-bottom: 30px;
-    }
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: rgba(0, 0, 0, 0.4);
-      font-size: 1em;
-    }
-    .button {
-      display: inline-block;
-      background-color: #ffffff;
-      color: #2575fc;
-      padding: 10px 20px;
-      margin-top: 10px;
-      font-size: 1em;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: background 0.3s, color 0.3s;
-    }
-    .button:hover {
-      background-color: #2575fc;
-      color: #ffffff;
-    }
-    .lang-en { display: none; }
   </style>
+  <meta name="description" content="Интерактивный сайт о HTML: кто создал, зачем нужен и как используется сегодня.">
+  <meta property="og:title" content="Что такое HTML?">
+  <meta property="og:description" content="Познакомьтесь с языком, который лежит в основе всего веба.">
+  <meta property="og:image" content="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png">
+  <meta property="og:type" content="website">
 </head>
-<body>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 scroll-smooth">
 
-<div class="stars"></div>
-<div class="twinkling"></div>
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600 text-white px-4">
+    <div class="text-center max-w-2xl" data-aos="zoom-in">
+      <h1 class="text-5xl font-bold mb-4">Что такое HTML?</h1>
+      <p class="text-lg">Язык разметки, лежащий в основе всего веба</p>
+    </div>
+  </section>
 
-<div class="lang-switch">
-  <button onclick="setLanguage('ru')">Русский</button>
-  <button onclick="setLanguage('en')">English</button>
-</div>
+  <!-- Content Section -->
+  <section class="py-20 px-6 max-w-5xl mx-auto">
+    <div class="space-y-16">
 
-<header data-aos="fade-down">
-  HTML — Язык Интернета | HTML - The Language of the Web
-</header>
+      <div data-aos="fade-up">
+        <h2 class="text-3xl font-bold mb-2">Кто создал HTML?</h2>
+        <p>HTML был создан Тимом Бернерс-Ли в 1991 году. Это была революция в способе обмена информацией в интернете.</p>
+      </div>
 
-<nav>
-  <a href="#about">HTML</a>
-  <a href="#who">Кто?</a>
-  <a href="#history">История</a>
-  <a href="#use">Где используется</a>
-  <a href="#why">Зачем нужен</a>
-  <a href="#examples">Примеры</a>
-  <a href="#start">Как начать</a>
-</nav>
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h2 class="text-3xl font-bold mb-2">Зачем он нужен?</h2>
+        <p>HTML используется для структурирования контента веб-страниц: заголовков, текстов, изображений, ссылок и многого другого.</p>
+      </div>
 
-<section id="about" data-aos="fade-up">
-  <div class="lang-ru">
-    <h2>Что такое HTML?</h2>
-    <p>HTML — это язык разметки для создания структуры веб-страниц. Он задаёт, где заголовки, параграфы, изображения и ссылки.</p>
-  </div>
-  <div class="lang-en">
-    <h2>What is HTML?</h2>
-    <p>HTML is a markup language used to structure web pages. It defines headings, paragraphs, images, and links.</p>
-  </div>
-</section>
+      <div data-aos="fade-up" data-aos-delay="200">
+        <h2 class="text-3xl font-bold mb-2">Как HTML используется сегодня?</h2>
+        <p>Сегодня HTML является частью триады технологий: HTML + CSS + JavaScript, и используется во всех веб-приложениях — от простых сайтов до сложных платформ.</p>
+      </div>
 
-<section id="who" data-aos="fade-right">
-  <div class="lang-ru">
-    <h2>Кто придумал HTML?</h2>
-    <p>HTML был разработан Тимом Бернерсом-Ли в 1991 году в CERN для обмена научной информацией через интернет.</p>
-  </div>
-  <div class="lang-en">
-    <h2>Who invented HTML?</h2>
-    <p>HTML was invented by Tim Berners-Lee in 1991 at CERN to share scientific data over the Internet.</p>
-  </div>
-</section>
-
-<section id="history" data-aos="fade-left">
-  <div class="lang-ru">
-    <h2>История HTML</h2>
-    <p>HTML прошёл путь от простой версии 2.0 до современного HTML5, поддерживающего видео, аудио и графику.</p>
-  </div>
-  <div class="lang-en">
-    <h2>History of HTML</h2>
-    <p>HTML evolved from simple version 2.0 to modern HTML5, which supports video, audio, and graphics.</p>
-  </div>
-</section>
-
-<section id="use" data-aos="fade-right">
-  <div class="lang-ru">
-    <h2>Где используется HTML?</h2>
-    <p>HTML используется во всех сайтах, веб-приложениях, интерфейсах, электронных книгах и даже email-рассылках.</p>
-  </div>
-  <div class="lang-en">
-    <h2>Where is HTML used?</h2>
-    <p>HTML is used in all websites, web apps, user interfaces, ebooks, and even email newsletters.</p>
-  </div>
-</section>
-
-<section id="why" data-aos="fade-up">
-  <div class="lang-ru">
-    <h2>Зачем нужен HTML?</h2>
-    <p>Без HTML не существовало бы структуры веб-страниц. Это основа любого сайта.</p>
-  </div>
-  <div class="lang-en">
-    <h2>Why is HTML important?</h2>
-    <p>Without HTML, websites wouldn't have structure. It's the foundation of every site.</p>
-  </div>
-</section>
-
-<section id="examples" data-aos="fade-left">
-  <div class="lang-ru">
-    <h2>Пример кода</h2>
-    <pre>&lt;!DOCTYPE html&gt;
+      <div data-aos="fade-up" data-aos-delay="300">
+        <h2 class="text-3xl font-bold mb-2">Пример HTML-кода</h2>
+        <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm"><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;head&gt;&lt;/head&gt;
+  &lt;head&gt;
+    &lt;title&gt;Пример&lt;/title&gt;
+  &lt;/head&gt;
   &lt;body&gt;
     &lt;h1&gt;Привет, мир!&lt;/h1&gt;
   &lt;/body&gt;
-&lt;/html&gt;</pre>
-  </div>
-  <div class="lang-en">
-    <h2>Code Example</h2>
-    <pre>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;&lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Hello, world!&lt;/h1&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</pre>
-  </div>
-</section>
+&lt;/html&gt;</code></pre>
+      </div>
 
-<section id="start" data-aos="fade-up">
-  <div class="lang-ru">
-    <h2>Как начать?</h2>
-    <p>Достаточно блокнота и браузера. Начни с простого и развивайся!</p>
-    <a href="https://developer.mozilla.org/ru/docs/Web/HTML" class="button" target="_blank">Изучать HTML</a>
-  </div>
-  <div class="lang-en">
-    <h2>How to start?</h2>
-    <p>All you need is a text editor and a browser. Start small and grow!</p>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="button" target="_blank">Learn HTML</a>
-  </div>
-</section>
+    </div>
+  </section>
 
-<footer>
-  © 2025 Мой HTML-проект | My HTML Project
-</footer>
+  <!-- Footer -->
+  <footer class="text-center py-6 bg-gray-800 text-white" data-aos="fade-up">
+    Сделано с ❤️ | 2025
+  </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-  function setLanguage(lang) {
-    document.querySelectorAll('.lang-ru').forEach(el => el.style.display = (lang === 'ru' ? 'block' : 'none'));
-    document.querySelectorAll('.lang-en').forEach(el => el.style.display = (lang === 'en' ? 'block' : 'none'));
-  }
-  setLanguage('ru');
-</script>
+  <!-- Theme toggle -->
+  <button onclick="toggleTheme()" class="fixed bottom-6 right-6 z-50 bg-white dark:bg-gray-700 text-gray-800 dark:text-white p-3 rounded-full shadow-lg border">
+    🌗
+  </button>
 
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+    const toggleTheme = () => {
+      const html = document.documentElement;
+      html.classList.toggle('dark');
+      localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+    };
+    (() => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
 </body>
 </html>
