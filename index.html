@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-lang="title">Что такое HTML?</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1 class="fade-in" data-lang="heroTitle">Что такое HTML?</h1>
+      <p class="fade-in delay" data-lang="heroSubtitle">Расширенный рассказ о языке разметки и викторина!</p>
+    </div>
+  </header>
+
+  <main class="content">
+    <section class="section fade-in">
+      <h2 data-lang="introTitle">🔍 Введение</h2>
+      <p data-lang="introText">HTML — это основа всех веб-страниц...</p>
+    </section>
+
+    <!-- Остальные секции (история, назначение и т.п.) опущены для краткости -->
+
+    <section class="section fade-in">
+      <h2 data-lang="quizTitle">🧠 Мини-викторина</h2>
+      <div id="quiz">
+        <p data-lang="quizQuestion">Что означает аббревиатура HTML?</p>
+        <button onclick="checkAnswer(true)">HyperText Markup Language</button>
+        <button onclick="checkAnswer(false)">Home Tool Markup Language</button>
+        <p id="quizResult"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#top" class="to-top" data-lang="backToTop">Наверх ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
