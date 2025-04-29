@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML — Язык Интернета | HTML - The Language of the Web</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .stars, .twinkling {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    .stars {
+      background: url('https://i.imgur.com/wMHRR6U.png') repeat;
+      animation: moveStars 50s linear infinite;
+    }
+    .twinkling {
+      background: url('https://i.imgur.com/7b1IKRy.png') repeat;
+      animation: twinkle 200s linear infinite;
+    }
+    @keyframes moveStars {
+      from { background-position: 0 0; }
+      to { background-position: 10000px 5000px; }
+    }
+    @keyframes twinkle {
+      from { opacity: 1; }
+      50% { opacity: 0.3; }
+      to { opacity: 1; }
+    }
+    header {
+      text-align: center;
+      padding: 120px 20px 60px;
+      font-size: 2.5em;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.3);
+    }
+    nav {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffd700;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .lang-switch button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      font-size: 1em;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      border-bottom: 2px solid white;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.4);
+      font-size: 1em;
+    }
+    .button {
+      display: inline-block;
+      background-color: #ffffff;
+      color: #2575fc;
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 1em;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s;
+    }
+    .button:hover {
+      background-color: #2575fc;
+      color: #ffffff;
+    }
+    .lang-en { display: none; }
+  </style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="twinkling"></div>
+
+<div class="lang-switch">
+  <button onclick="setLanguage('ru')">Русский</button>
+  <button onclick="setLanguage('en')">English</button>
+</div>
+
+<header data-aos="fade-down">
+  HTML — Язык Интернета | HTML - The Language of the Web
+</header>
+
+<nav>
+  <a href="#about">HTML</a>
+  <a href="#who">Кто?</a>
+  <a href="#history">История</a>
+  <a href="#use">Где используется</a>
+  <a href="#why">Зачем нужен</a>
+  <a href="#examples">Примеры</a>
+  <a href="#start">Как начать</a>
+</nav>
+
+<section id="about" data-aos="fade-up">
+  <div class="lang-ru">
+    <h2>Что такое HTML?</h2>
+    <p>HTML — это язык разметки для создания структуры веб-страниц. Он задаёт, где заголовки, параграфы, изображения и ссылки.</p>
+  </div>
+  <div class="lang-en">
+    <h2>What is HTML?</h2>
+    <p>HTML is a markup language used to structure web pages. It defines headings, paragraphs, images, and links.</p>
+  </div>
+</section>
+
+<section id="who" data-aos="fade-right">
+  <div class="lang-ru">
+    <h2>Кто придумал HTML?</h2>
+    <p>HTML был разработан Тимом Бернерсом-Ли в 1991 году в CERN для обмена научной информацией через интернет.</p>
+  </div>
+  <div class="lang-en">
+    <h2>Who invented HTML?</h2>
+    <p>HTML was invented by Tim Berners-Lee in 1991 at CERN to share scientific data over the Internet.</p>
+  </div>
+</section>
+
+<section id="history" data-aos="fade-left">
+  <div class="lang-ru">
+    <h2>История HTML</h2>
+    <p>HTML прошёл путь от простой версии 2.0 до современного HTML5, поддерживающего видео, аудио и графику.</p>
+  </div>
+  <div class="lang-en">
+    <h2>History of HTML</h2>
+    <p>HTML evolved from simple version 2.0 to modern HTML5, which supports video, audio, and graphics.</p>
+  </div>
+</section>
+
+<section id="use" data-aos="fade-right">
+  <div class="lang-ru">
+    <h2>Где используется HTML?</h2>
+    <p>HTML используется во всех сайтах, веб-приложениях, интерфейсах, электронных книгах и даже email-рассылках.</p>
+  </div>
+  <div class="lang-en">
+    <h2>Where is HTML used?</h2>
+    <p>HTML is used in all websites, web apps, user interfaces, ebooks, and even email newsletters.</p>
+  </div>
+</section>
+
+<section id="why" data-aos="fade-up">
+  <div class="lang-ru">
+    <h2>Зачем нужен HTML?</h2>
+    <p>Без HTML не существовало бы структуры веб-страниц. Это основа любого сайта.</p>
+  </div>
+  <div class="lang-en">
+    <h2>Why is HTML important?</h2>
+    <p>Without HTML, websites wouldn't have structure. It's the foundation of every site.</p>
+  </div>
+</section>
+
+<section id="examples" data-aos="fade-left">
+  <div class="lang-ru">
+    <h2>Пример кода</h2>
+    <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+  </div>
+  <div class="lang-en">
+    <h2>Code Example</h2>
+    <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+  </div>
+</section>
+
+<section id="start" data-aos="fade-up">
+  <div class="lang-ru">
+    <h2>Как начать?</h2>
+    <p>Достаточно блокнота и браузера. Начни с простого и развивайся!</p>
+    <a href="https://developer.mozilla.org/ru/docs/Web/HTML" class="button" target="_blank">Изучать HTML</a>
+  </div>
+  <div class="lang-en">
+    <h2>How to start?</h2>
+    <p>All you need is a text editor and a browser. Start small and grow!</p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="button" target="_blank">Learn HTML</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Мой HTML-проект | My HTML Project
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  function setLanguage(lang) {
+    document.querySelectorAll('.lang-ru').forEach(el => el.style.display = (lang === 'ru' ? 'block' : 'none'));
+    document.querySelectorAll('.lang-en').forEach(el => el.style.display = (lang === 'en' ? 'block' : 'none'));
+  }
+  setLanguage('ru');
+</script>
+
+</body>
+</html>
