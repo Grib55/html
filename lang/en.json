@@ -1,0 +1,44 @@
+{
+    "title": "HTML — The Web Foundation (US)",
+    "subtitle": "From static pages to dynamic applications",
+    "intro_title": "🔍 Understanding HTML",
+    "intro_text": {
+        "description": "HTML (HyperText Markup Language) is the standard markup language for creating web pages in the US and worldwide.",
+        "core_concepts_title": "Core Concepts:",
+        "core_concepts": [
+            "Uses a system of tags and attributes",
+            "Defines document structure",
+            "Works with CSS and JavaScript"
+        ],
+        "example_title": "Document Structure:"
+    },
+    "history_title": "📜 Historical Evolution",
+    "timeline": [
+        {"year": "1991", "event": "First public HTML specification by Tim Berners-Lee"},
+        {"year": "1995", "event": "HTML 2.0 released (first standardized version)"},
+        {"year": "2014", "event": "HTML5 became W3C Recommendation"}
+    ],
+    "features_title": "🚀 HTML5 Modern Features",
+    "features": [
+        {"title": "Semantic Elements", "content": "&lt;header&gt;, &lt;footer&gt;, &lt;article&gt;, &lt;section&gt;"},
+        {"title": "Multimedia", "content": "&lt;video&gt; and &lt;audio&gt; tags"},
+        {"title": "Graphics", "content": "&lt;canvas&gt; and &lt;svg&gt; support"}
+    ],
+    "applications_title": "💡 Practical Applications",
+    "applications": [
+        {"title": "Web Development", "content": "Building responsive websites and web applications"},
+        {"title": "Email Templates", "content": "Creating HTML email designs"},
+        {"title": "Documentation", "content": "Online help systems and manuals"}
+    ],
+    "facts_title": "✨ Did You Know?",
+    "facts": [
+        {"content": "The first website (info.cern.ch) is still online"},
+        {"content": "HTML is used in some eBook formats (EPUB)"},
+        {"content": "NASA uses HTML for Mars rover interfaces"}
+    ],
+    "back_to_top": "Back to Top ↑",
+    "footer_links": [
+        {"text": "HTML Standards", "url": "https://w3.org/html"},
+        {"text": "MDN Resources", "url": "https://developer.mozilla.org/en-US/docs/Web/HTML"}
+    ]
+}
