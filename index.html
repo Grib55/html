@@ -7,58 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Стилі для гри */
-        #html-game {
-            width: 100%;
-            height: 400px;
-            background: #f0f0f0;
-            border-radius: 10px;
-            margin: 30px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        #game-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-        #tag-dropper {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 24px;
-            background: #6e48aa;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 10;
-        }
-        .html-tag {
-            position: absolute;
-            background: #9d50bb;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-family: 'Fira Code', monospace;
-            cursor: pointer;
-            transition: transform 0.2s;
-            z-index: 5;
-        }
-        .html-tag:hover {
-            transform: scale(1.1);
-        }
-        #score-display {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            font-size: 18px;
-            font-weight: bold;
-            z-index: 10;
-        }
-    </style>
 </head>
 <body>
     <!-- Анімований фон -->
@@ -99,7 +47,7 @@
                     </ul>
                 </div>
                 <div class="media-content">
-                    <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_512.png" alt="Логотип HTML5" class="content-image">
+                    <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" alt="Логотип HTML5" class="content-image">
                 </div>
             </div>
         </section>
@@ -117,7 +65,7 @@
                     <div class="timeline-content">
                         <h3>Народження HTML</h3>
                         <p>Тім Бернерс-Лі створив першу версію HTML у CERN для обміну науковими документами</p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg" alt="Тім Бернерс-Лі" class="timeline-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg/200px-Sir_Tim_Berners-Lee_%28cropped%29.jpg" alt="Тім Бернерс-Лі" class="timeline-image">
                     </div>
                 </div>
                 
@@ -126,7 +74,7 @@
                     <div class="timeline-content">
                         <h3>HTML 2.0</h3>
                         <p>Перша офіційна стандартизована версія</p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/HTML5_Logo_%28official%29.svg/1200px-HTML5_Logo_%28official%29.svg.png" alt="HTML2" class="timeline-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/HTML5_Logo_%28official%29.svg/200px-HTML5_Logo_%28official%29.svg.png" alt="HTML2" class="timeline-image">
                     </div>
                 </div>
                 
@@ -135,7 +83,7 @@
                     <div class="timeline-content">
                         <h3>HTML5</h3>
                         <p>Революційна версія з підтримкою мультимедіа та семантичних елементів</p>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5" class="timeline-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5" class="timeline-image">
                     </div>
                 </div>
             </div>
@@ -152,11 +100,13 @@
                 <div id="game-container">
                     <div id="tag-dropper">Клікніть, щоб почати гру</div>
                     <div id="score-display">Рахунок: 0</div>
+                    <div id="best-score">Найкращий: 0</div>
+                    <button id="stop-game">Зупинити гру</button>
                 </div>
             </div>
             
             <div class="game-description">
-                <p>Клікайте на теги, що з'являються, щоб отримати бали. Наберіть якомога більше!</p>
+                <p>Клікайте на теги, що з'являються, щоб отримати бали. Пропущений тег = -1 бал!</p>
             </div>
         </section>
 
@@ -226,7 +176,7 @@
     &lt;/article&gt;
     
     &lt;footer&gt;
-        &lt;p&gt;Мій сайт&lt;/p&gt;
+        &lt;p&gt;© 2023 Мій сайт&lt;/p&gt;
     &lt;/footer&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
@@ -252,21 +202,40 @@
         const gameContainer = document.getElementById('game-container');
         const tagDropper = document.getElementById('tag-dropper');
         const scoreDisplay = document.getElementById('score-display');
+        const bestScoreDisplay = document.getElementById('best-score');
+        const stopGameBtn = document.getElementById('stop-game');
         
         let score = 0;
+        let bestScore = localStorage.getItem('bestHTMLScore') || 0;
         let gameActive = false;
+        let gameInterval;
         const htmlTags = ['<div>', '<p>', '<h1>', '<a>', '<img>', '<span>', '<ul>', '<li>'];
         const tagColors = ['#6e48aa', '#9d50bb', '#4078c0', '#bd2c00', '#6cc644'];
         
+        bestScoreDisplay.textContent = `Найкращий: ${bestScore}`;
+        
         tagDropper.addEventListener('click', function() {
             if (!gameActive) {
-                gameActive = true;
-                this.textContent = "Гра йде!";
-                score = 0;
-                scoreDisplay.textContent = `Рахунок: ${score}`;
-                startGame();
+                startNewGame();
             }
         });
+        
+        stopGameBtn.addEventListener('click', function() {
+            stopGame();
+        });
+        
+        function startNewGame() {
+            gameActive = true;
+            score = 0;
+            tagDropper.textContent = "Гра йде!";
+            scoreDisplay.textContent = `Рахунок: ${score}`;
+            stopGameBtn.style.display = 'block';
+            
+            // Очистити всі теги, які могли залишитися
+            document.querySelectorAll('.html-tag').forEach(tag => tag.remove());
+            
+            startGame();
+        }
         
         function startGame() {
             if (!gameActive) return;
@@ -294,11 +263,17 @@
                 if (currentTop > gameContainer.offsetHeight) {
                     clearInterval(fallInterval);
                     tag.remove();
+                    if (gameActive) {
+                        score = Math.max(0, score - 1); // Не менше 0
+                        scoreDisplay.textContent = `Рахунок: ${score}`;
+                    }
                 }
             }, 20);
             
             // Клік на тег
             tag.addEventListener('click', function() {
+                if (!gameActive) return;
+                
                 score++;
                 scoreDisplay.textContent = `Рахунок: ${score}`;
                 this.style.transform = 'scale(1.5)';
@@ -311,7 +286,21 @@
             
             // Наступний тег через випадковий час
             const nextTagTime = Math.random() * 2000 + 500;
-            setTimeout(startGame, nextTagTime);
+            gameInterval = setTimeout(startGame, nextTagTime);
+        }
+        
+        function stopGame() {
+            gameActive = false;
+            clearTimeout(gameInterval);
+            tagDropper.textContent = "Клікніть, щоб почати гру";
+            stopGameBtn.style.display = 'none';
+            
+            // Оновити найкращий результат
+            if (score > bestScore) {
+                bestScore = score;
+                localStorage.setItem('bestHTMLScore', bestScore);
+                bestScoreDisplay.textContent = `Найкращий: ${bestScore}`;
+            }
         }
     </script>
 </body>
