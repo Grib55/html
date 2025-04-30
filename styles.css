@@ -197,7 +197,7 @@ body {
 }
 
 .timeline-image {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
     border-radius: 8px;
     margin-top: 15px;
@@ -326,6 +326,146 @@ code {
     font-size: 0.9rem;
 }
 
+/* Гра з HTML тегами */
+#html-game {
+    width: 100%;
+    height: 400px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#tag-dropper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    background: #6e48aa;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.html-tag {
+    position: absolute;
+    background: #9d50bb;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 5;
+}
+
+.html-tag:hover {
+    transform: scale(1.1);
+}
+
+#score-display {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 10;
+}
+
+#best-score {
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    font-size: 16px;
+    color: #666;
+    z-index: 10;
+}
+
+#stop-game {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 15px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+    display: none;
+}
+
+/* Таймлайн */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: var(--primary);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-year {
+    background: var(--primary);
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 20px;
+    right: -40px;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+    left: -40px;
+}
+
+.timeline-content {
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
 /* Адаптивність */
 @media (max-width: 768px) {
     .hero {
@@ -346,5 +486,28 @@ code {
     
     .content-image {
         margin-top: 20px;
+    }
+    
+    .timeline::before {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+    
+    .timeline-year {
+        left: 0 !important;
+        right: auto;
+    }
+    
+    #html-game {
+        height: 300px;
     }
 }
