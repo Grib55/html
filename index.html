@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Штучний інтелект сьогодні</title>
+    <title>Навчальний портал</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,20 +15,185 @@
     <!-- Головний заголовок -->
     <header class="hero">
         <div class="hero-content">
-            <div class="theme-switcher">
-                <button id="prev-theme" class="theme-arrow"><i class="fas fa-chevron-left"></i></button>
-                <h1 class="title-animate">Штучний <span class="gradient-text">інтелект</span></h1>
-                <button id="next-theme" class="theme-arrow"><i class="fas fa-chevron-right"></i></button>
+            <div class="content-switcher">
+                <button id="prev-content" class="content-arrow"><i class="fas fa-chevron-left"></i></button>
+                <div class="title-container">
+                    <h1 class="title-animate html-title">Повний гід <span class="gradient-text">HTML</span></h1>
+                    <h1 class="title-animate ai-title hidden">Штучний <span class="gradient-text">інтелект</span></h1>
+                </div>
+                <button id="next-content" class="content-arrow"><i class="fas fa-chevron-right"></i></button>
             </div>
-            <p class="subtitle-animate">Сучасні технології та перспективи</p>
+            <p class="subtitle-animate html-subtitle">Від основ до професійного рівня</p>
+            <p class="subtitle-animate ai-subtitle hidden">Сучасні технології та перспективи</p>
             <div class="scroll-down">
                 <i class="fas fa-chevron-down pulse"></i>
             </div>
         </div>
     </header>
 
-    <!-- Основний вміст -->
-    <main class="content">
+    <!-- Основний вміст HTML -->
+    <main class="content html-content">
+        <!-- Секція "Що таке HTML" -->
+        <section class="section card fade-scroll">
+            <div class="section-header">
+                <h2><i class="fas fa-code"></i> Що таке HTML?</h2>
+                <div class="underline gradient-bg"></div>
+            </div>
+            <div class="columns">
+                <div class="text-content">
+                    <p><strong>HTML (HyperText Markup Language)</strong> - це мова розмітки для створення веб-сторінок. Вона визначає структуру та зміст веб-документів за допомогою системи тегів.</p>
+                    
+                    <div class="highlight-box">
+                        <p><i class="fas fa-lightbulb"></i> <strong>Цікавий факт:</strong> Перша версія HTML містила лише 18 тегів. Сьогодні HTML5 підтримує понад 140 елементів!</p>
+                    </div>
+                    
+                    <h3>Основні поняття:</h3>
+                    <ul class="styled-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Теги</strong> - базові будівельні блоки HTML</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Атрибути</strong> - додаткова інформація про елементи</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Семантика</strong> - значення елементів для пошукових систем</li>
+                    </ul>
+                </div>
+                <div class="media-content">
+                    <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" alt="Логотип HTML5" class="content-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Історія HTML -->
+        <section class="section card fade-scroll">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Історія розвитку HTML</h2>
+                <div class="underline gradient-bg"></div>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year pulse">1991</div>
+                    <div class="timeline-content">
+                        <h3>Народження HTML</h3>
+                        <p>Тім Бернерс-Лі створив першу версію HTML у CERN для обміну науковими документами</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Sir_Tim_Berners-Lee_%28cropped%29.jpg/200px-Sir_Tim_Berners-Lee_%28cropped%29.jpg" alt="Тім Бернерс-Лі" class="timeline-image">
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year pulse">1995</div>
+                    <div class="timeline-content">
+                        <h3>HTML 2.0</h3>
+                        <p>Перша офіційна стандартизована версія</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/HTML5_Logo_%28official%29.svg/200px-HTML5_Logo_%28official%29.svg.png" alt="HTML2" class="timeline-image">
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year pulse">2014</div>
+                    <div class="timeline-content">
+                        <h3>HTML5</h3>
+                        <p>Революційна версія з підтримкою мультимедіа та семантичних елементів</p>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5" class="timeline-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Гра з HTML тегами -->
+        <section class="section card fade-scroll">
+            <div class="section-header">
+                <h2><i class="fas fa-gamepad"></i> Гра "Впіймай HTML-тег"</h2>
+                <div class="underline gradient-bg"></div>
+            </div>
+            
+            <div id="html-game">
+                <div id="game-container">
+                    <div id="tag-dropper">Клікніть, щоб почати гру</div>
+                    <div id="score-display">Рахунок: 0</div>
+                    <div id="best-score">Найкращий: 0</div>
+                    <button id="stop-game">Зупинити гру</button>
+                </div>
+            </div>
+            
+            <div class="game-description">
+                <p>Клікайте на теги, що з'являються, щоб отримати бали. Пропущений тег = -1 бал!</p>
+            </div>
+        </section>
+
+        <!-- Семантичний HTML -->
+        <section class="section card fade-scroll">
+            <div class="section-header">
+                <h2><i class="fas fa-sitemap"></i> Семантичний HTML</h2>
+                <div class="underline gradient-bg"></div>
+            </div>
+            
+            <div class="semantic-grid">
+                <div class="semantic-card">
+                    <div class="semantic-icon">
+                        <i class="fas fa-header"></i>
+                    </div>
+                    <h3>&lt;header&gt;</h3>
+                    <p>Верхня частина сторінки або розділу</p>
+                </div>
+                
+                <div class="semantic-card">
+                    <div class="semantic-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>&lt;article&gt;</h3>
+                    <p>Самостійний блок контенту</p>
+                </div>
+                
+                <div class="semantic-card">
+                    <div class="semantic-icon">
+                        <i class="fas fa-map-signs"></i>
+                    </div>
+                    <h3>&lt;nav&gt;</h3>
+                    <p>Навігаційне меню</p>
+                </div>
+                
+                <div class="semantic-card">
+                    <div class="semantic-icon">
+                        <i class="fas fa-footer"></i>
+                    </div>
+                    <h3>&lt;footer&gt;</h3>
+                    <p>Нижній колонтитул</p>
+                </div>
+            </div>
+            
+            <div class="code-example">
+                <h3>Приклад семантичної розмітки:</h3>
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Семантична сторінка&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Заголовок сайту&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Головна&lt;/a&gt;&lt;/li&gt;
+                &lt;li&gt;&lt;a href="#"&gt;Про нас&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+    
+    &lt;article&gt;
+        &lt;h2&gt;Назва статті&lt;/h2&gt;
+        &lt;p&gt;Основний вміст...&lt;/p&gt;
+    &lt;/article&gt;
+    
+    &lt;footer&gt;
+        &lt;p&gt;© 2023 Мій сайт&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- Основний вміст AI -->
+    <main class="content ai-content hidden">
         <!-- Секція "Що таке ШІ" -->
         <section class="section card fade-scroll">
             <div class="section-header">
@@ -158,13 +323,121 @@
             <div class="footer-section">
                 <h3>Додаткові матеріали</h3>
                 <ul>
-                    <li><a href="https://ai.google/" target="_blank">Google AI</a></li>
-                    <li><a href="https://openai.com/" target="_blank">OpenAI</a></li>
+                    <li><a href="https://developer.mozilla.org/uk/docs/Web/HTML" target="_blank" class="html-link">Документація MDN</a></li>
+                    <li><a href="https://html.spec.whatwg.org/" target="_blank" class="html-link">Стандарт HTML</a></li>
+                    <li><a href="https://ai.google/" target="_blank" class="ai-link hidden">Google AI</a></li>
+                    <li><a href="https://openai.com/" target="_blank" class="ai-link hidden">OpenAI</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Гра з HTML тегами
+        const gameContainer = document.getElementById('game-container');
+        const tagDropper = document.getElementById('tag-dropper');
+        const scoreDisplay = document.getElementById('score-display');
+        const bestScoreDisplay = document.getElementById('best-score');
+        const stopGameBtn = document.getElementById('stop-game');
+        
+        let score = 0;
+        let bestScore = localStorage.getItem('bestHTMLScore') || 0;
+        let gameActive = false;
+        let gameInterval;
+        const htmlTags = ['<div>', '<p>', '<h1>', '<a>', '<img>', '<span>', '<ul>', '<li>'];
+        const tagColors = ['#6e48aa', '#9d50bb', '#4078c0', '#bd2c00', '#6cc644'];
+        
+        bestScoreDisplay.textContent = `Найкращий: ${bestScore}`;
+        
+        tagDropper.addEventListener('click', function() {
+            if (!gameActive) {
+                startNewGame();
+            }
+        });
+        
+        stopGameBtn.addEventListener('click', function() {
+            stopGame();
+        });
+        
+        function startNewGame() {
+            gameActive = true;
+            score = 0;
+            tagDropper.textContent = "Гра йде!";
+            scoreDisplay.textContent = `Рахунок: ${score}`;
+            stopGameBtn.style.display = 'block';
+            
+            // Очистити всі теги, які могли залишитися
+            document.querySelectorAll('.html-tag').forEach(tag => tag.remove());
+            
+            startGame();
+        }
+        
+        function startGame() {
+            if (!gameActive) return;
+            
+            // Створення нового тегу
+            const tag = document.createElement('div');
+            tag.className = 'html-tag';
+            tag.textContent = htmlTags[Math.floor(Math.random() * htmlTags.length)];
+            tag.style.backgroundColor = tagColors[Math.floor(Math.random() * tagColors.length)];
+            
+            // Випадкова позиція
+            const leftPos = Math.random() * (gameContainer.offsetWidth - 100);
+            tag.style.left = `${leftPos}px`;
+            tag.style.top = '0px';
+            
+            // Додавання тегу в контейнер
+            gameContainer.appendChild(tag);
+            
+            // Анімація падіння
+            let fallInterval = setInterval(() => {
+                const currentTop = parseInt(tag.style.top);
+                tag.style.top = `${currentTop + 2}px`;
+                
+                // Перевірка чи тег дійшов до низу
+                if (currentTop > gameContainer.offsetHeight) {
+                    clearInterval(fallInterval);
+                    tag.remove();
+                    if (gameActive) {
+                        score = Math.max(0, score - 1); // Не менше 0
+                        scoreDisplay.textContent = `Рахунок: ${score}`;
+                    }
+                }
+            }, 20);
+            
+            // Клік на тег
+            tag.addEventListener('click', function() {
+                if (!gameActive) return;
+                
+                score++;
+                scoreDisplay.textContent = `Рахунок: ${score}`;
+                this.style.transform = 'scale(1.5)';
+                this.style.opacity = '0';
+                setTimeout(() => {
+                    this.remove();
+                }, 200);
+                clearInterval(fallInterval);
+            });
+            
+            // Наступний тег через випадковий час
+            const nextTagTime = Math.random() * 2000 + 500;
+            gameInterval = setTimeout(startGame, nextTagTime);
+        }
+        
+        function stopGame() {
+            gameActive = false;
+            clearTimeout(gameInterval);
+            tagDropper.textContent = "Клікніть, щоб почати гру";
+            stopGameBtn.style.display = 'none';
+            
+            // Оновити найкращий результат
+            if (score > bestScore) {
+                bestScore = score;
+                localStorage.setItem('bestHTMLScore', bestScore);
+                bestScoreDisplay.textContent = `Найкращий: ${bestScore}`;
+            }
+        }
+    </script>
 </body>
 </html>
