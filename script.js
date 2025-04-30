@@ -41,4 +41,16 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
         });
     });
+
+    // Ефекти для зображень
+    const images = document.querySelectorAll('.content-image, .timeline-image');
+    images.forEach(img => {
+        img.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.03)';
+        });
+        
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
+    });
 });
